@@ -16,7 +16,6 @@ SomaliAccentClassification/
 │-- data/                   # Processed voice recordings
 │-- notebooks/              # Jupyter notebooks for data analysis & model training
 │-- models/                 # Trained ML models
-│-- scripts/                # Feature extraction & classification scripts
 │-- README.md               # Project documentation
 │-- requirements.txt        # Dependencies
 ```
