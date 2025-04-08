@@ -14,10 +14,10 @@ SomaliAccentClassification is a machine learning project aimed at distinguishing
 ```
 SomaliAccentClassification/
 │-- data/                   # Processed voice recordings
+│-- src/                    # Python codes for preprocessing and feature extraction
 │-- notebooks/              # Jupyter notebooks for data analysis & model training
 │-- models/                 # Trained ML models
 │-- README.md               # Project documentation
-│-- requirements.txt        # Dependencies
 ```
 
 ## Installation
