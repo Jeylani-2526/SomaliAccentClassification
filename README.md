@@ -1,72 +1,99 @@
-# Somali Accent Classification
 
-## Overview
-SomaliAccentClassification is a machine learning project aimed at distinguishing Somali speakers from non-Somali speakers based on their pronunciation of specific consonants. The project utilizes feature extraction techniques and ML-based classification models to analyze speech patterns and predict speaker origin.
+# SomaliAccentClassification
 
-## Features
-- **Data Collection**: Voice recordings from Somali and non-Somali speakers.
-- **Preprocessing**: Resampling, trimming, noise reduction, and normalization.
-- **Feature Extraction**: MFCCs, chroma features, spectral centroid, spectral bandwidth, ZCR, and RMSE.
-- **ML Classification**: Supervised learning models for speaker classification.
-- **Evaluation Metrics**: Accuracy, precision, recall, and F1-score.
+**SomaliAccentClassification** is a machine learning project designed to detect Somali accents in spoken English using audio features extracted from `.wav` files. The model is trained primarily on Somali speakers and uses augmented data to handle the lack of non-Somali recordings.
 
-## Repository Structure
+---
+
+## 📁 Project Structure
+
 ```
+
 SomaliAccentClassification/
-│-- data/                   # Processed voice recordings
-│-- src/                    # Python codes for preprocessing and feature extraction
-│-- notebooks/              # Jupyter notebooks for data analysis & model training
-│-- models/                 # Trained ML models
-│-- README.md               # Project documentation
-```
+│
+├── data/
+│   ├── features/
+│   │   ├── somali\_features.csv
+│   │   └── nonsomali\_features.csv
+│   ├── nonsomali\_augmented/
+│   │   └── \[augmented non-Somali .wav files]
+│   └── somali\_processed/
+│       └── \[processed Somali .wav files]
+│
+├── models/
+│   └── svm_model.joblib
+│   └── scaler.joblib
+│
+├── scripts/
+│   ├── augmentation\_scripts.py
+│   ├── feature\_extraction.py
+│   ├── preprocessing.py
+│   ├── train\_model.py
+│   └── predict.py
+│
+└── README.md
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/SomaliAccentClassification.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd SomaliAccentClassification
-   ```
-3. Create and activate a virtual environment:
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
-   ```
-4. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+````
 
-## Usage
-### Feature Extraction
-Run the feature extraction script to generate the dataset for classification:
+---
+
+## 🧠 Project Goal
+
+To build a machine learning model that classifies whether an English speaker has a Somali accent. This can help with linguistic studies, dialect recognition, or voice authentication in multilingual environments.
+
+---
+
+## 🛠️ Key Features
+
+- **Data Augmentation** for limited non-Somali recordings.
+- **Feature Extraction** using MFCCs.
+- **SVM Classifier** for binary classification.
+- **Prediction script** for real-time testing with single `.wav` files.
+
+---
+
+## 📜 How to Use
+
+### 1. Preprocess and Extract Features
+
 ```bash
-python scripts/extract_features.py
-```
+python scripts/feature_extraction.py
+````
 
-### Train the Model
-To train the ML classifier, execute:
+### 2. Train the Model
+
 ```bash
 python scripts/train_model.py
 ```
 
-### Predict Speaker Category
-To classify a new audio file:
+### 3. Predict a Single File
+
 ```bash
-python scripts/predict.py --input path/to/audio.wav
+python scripts/predict.py --file path/to/your/file.wav
 ```
 
-## Future Enhancements
-- Improve model accuracy with hyperparameter tuning
-- Expand dataset with additional speaker samples
-- Implement deep learning-based classification models
-- Deploy as a web application
+---
 
-## Contributors
-- **Abdalla** – Lead Developer & Researcher
+## 🧪 Requirements
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+* Python 3.8+
+* `librosa`
+* `pandas`
+* `numpy`
+* `scikit-learn`
+* `joblib`
+
+Install all dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🔬 Author
+
+* 👤 **Abdalla Jeylani**
+* 📍 GitHub: [Jeylani-2526](https://github.com/Jeylani-2526)
+
 
