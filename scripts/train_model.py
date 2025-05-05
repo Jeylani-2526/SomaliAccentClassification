@@ -41,7 +41,7 @@ model.fit(X_train_scaled, y_train)
 
 # Evaluate
 y_pred = model.predict(X_test_scaled)
-print(classification_report(y_test, y_pred, target_names=["non-Somali (-1)", "Somali (+1)"]))
+print(classification_report(y_test, y_pred, target_names=["non-Somali (0)", "Somali (1)"]))
 
 # Save model and scaler
 os.makedirs("models", exist_ok=True)
